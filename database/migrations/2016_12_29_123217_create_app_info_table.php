@@ -41,6 +41,6 @@ class CreateAppInfoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('app_info');
     }
 }

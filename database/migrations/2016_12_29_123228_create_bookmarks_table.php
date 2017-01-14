@@ -15,10 +15,11 @@ class CreateBookmarksTable extends Migration
     {
         Schema::create('bookmarks',function(Blueprint $table){
             $table->increments('id');
-            $table->string('aff_sub_rand',50);
-            $table->string('rand_id',20);
-            $table->foreign('aff_sub_rand')->references('aff_sub_rand')->on('users')->onDelete('cascade');
-            $table->foreign('rand_id')->references('rand_id')->on('offers')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->integer('offer_id')->unsigned();
+            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateBookmarksTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::drop('bookmarks');
     }
 }

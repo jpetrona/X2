@@ -16,8 +16,8 @@ class CreateMenuBannerTable extends Migration
          Schema::create('menu_banner',function(Blueprint $table){
             $table->increments('id');
             $table->string('icon');
-            $table->string('text')->unique();
-            $table->string('status');
+            $table->string('name')->unique();
+            $table->boolean('status');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateMenuBannerTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('menu_banner');
     }
 }

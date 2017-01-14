@@ -15,13 +15,13 @@ class CreateOfferwallTable extends Migration
     {
         Schema::create('offerwall',function(Blueprint $table){
             $table->increments('id');
-            $table->string('network');
+            $table->string('network',50);
             $table->string('iframe');
-            $table->string('networkid');
-            $table->string('pass');
-            $table->string('secretKey');
-            $table->string('dailypoint');
-            $table->string('status');
+            $table->string('networkid',50);
+            $table->string('pass',20);
+            $table->string('secretKey',50);
+            $table->string('dailypoint',20);
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateOfferwallTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('offerwall');
     }
 }

@@ -15,12 +15,12 @@ class CreateClicksTable extends Migration
     {
          Schema::create('clicks',function(Blueprint $table){
             $table->increments('id');
-            $table->string('aff_sub_rand',50);
-            $table->string('rand_id',20);
+            $table->integer('user_id')->unsigned();
+            $table->integer('offer_id')->unsigned();
             $table->ipAddress('ip');
             $table->timestamps();
-            $table->foreign('aff_sub_rand')->references('aff_sub_rand')->on('users')->onDelete('cascade');
-            $table->foreign('rand_id')->references('rand_id')->on('offers')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateClicksTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('clicks');
     }
 }

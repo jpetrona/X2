@@ -18,10 +18,10 @@ class CreateNetworkTable extends Migration
             $table->string('networkname');
             $table->string('api');
             $table->string('networkid',50)->unique();
-            $table->string('rate');
-            $table->string('aff_sub');
-            $table->string('platform');
-            $table->string('status');
+            $table->integer('rate');
+            $table->string('aff_sub',100);
+            $table->string('platform',100);
+            $table->boolean('status');
             $table->string('postback');
             $table->timestamps();       
         });
@@ -34,6 +34,6 @@ class CreateNetworkTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('network');
     }
 }

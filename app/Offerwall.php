@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class offerwall extends Model
+class Offerwall extends Model
 {
     protected $table="offerwall";
 }

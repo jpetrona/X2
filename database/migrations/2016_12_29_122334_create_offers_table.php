@@ -17,23 +17,23 @@ class CreateOffersTable extends Migration
             $table->increments('id');
             $table->string('off_id')->unique();
             $table->string('off_name');
-            $table->string('point');
-            $table->string('networkid',50);
+            $table->integer('point');
+            $table->integer('network_id')->unsigned();
             $table->string('payout');
-            $table->string('dailycap');
+            $table->integer('dailycap');
             $table->string('country');
             $table->string('img_link');
             $table->string('tracking');
-            $table->string('des');
-            $table->string('os');
+            $table->text('des');
+            $table->integer('menu_id')->unsigned();
             $table->string('rand_id',20)->unique();
-            $table->string('incent');
-            $table->string('click');
-            $table->string('lead');
-            $table->string('status');
+            $table->boolean('incent');
+            $table->integer('click');
+            $table->integer('lead');
+            $table->boolean('status');
             $table->timestamps();
-            $table->foreign('networkid')->references('networkid')->on('network')->onDelete('cascade');
-            $table->foreign('os')->references('text')->on('menu_banner')->onDelete('cascade');
+            $table->foreign('network_id')->references('id')->on('network')->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menu_banner')->onDelete('cascade');
 
         });
     }
@@ -45,6 +45,6 @@ class CreateOffersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('offers');
     }
 }

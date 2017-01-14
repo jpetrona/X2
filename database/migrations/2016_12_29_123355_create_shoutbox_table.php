@@ -15,11 +15,11 @@ class CreateShoutboxTable extends Migration
     {
          Schema::create('shoutbox',function(Blueprint $table){
             $table->increments('id');
-            $table->string('fullname');
+            $table->string('fullname',50);
             $table->string('off_id',20);
             $table->string('off_name');
             $table->string('point',10);
-            $table->string('os',20);
+            $table->string('os',50);
             $table->ipAddress('ip');
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateShoutboxTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('shoutbox');
     }
 }

@@ -19,6 +19,7 @@ class CreateAdminTable extends Migration
         	$table->string('username',32)->unique();
         	$table->string('password',60);
         	$table->string('email',100);
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::drop('admin');
     }
 }

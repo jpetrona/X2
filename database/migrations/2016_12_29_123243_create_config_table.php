@@ -15,7 +15,7 @@ class CreateConfigTable extends Migration
     {
         Schema::create('config',function(Blueprint $table){
             $table->increments('id');
-            $table->string('key');
+            $table->string('key',50);
             $table->string('value');
         });
     }
@@ -27,6 +27,6 @@ class CreateConfigTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('config');
     }
 }

@@ -15,15 +15,15 @@ class CreateInvoiceTable extends Migration
     {
         Schema::create('invoice',function(Blueprint $table){
             $table->increments('id');
-            $table->string('aff_sub_rand',50);
+            $table->integer('user_id')->unsigned();
             $table->string('payout');
             $table->string('money');
             $table->string('bank');
             $table->string('name');
-            $table->string('stk');
-            $table->string('paid');
+            $table->string('stk',50);
+            $table->boolean('paid');
             $table->timestamps();
-            $table->foreign('aff_sub_rand')->references('aff_sub_rand')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -34,6 +34,6 @@ class CreateInvoiceTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('invoice');
     }
 }

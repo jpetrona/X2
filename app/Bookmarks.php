@@ -8,5 +8,10 @@ class Bookmarks extends Model
 {
 	protected $table="bookmarks";
 	
-    public $timestamps = false;
+    public function users(){
+    	return $this->belongsTo(App\Users::class,'user_id');
+    }
+    public function offers(){
+    	return $this->belongsTo(App\Offers::class,'offer_id');
+    }
 }
