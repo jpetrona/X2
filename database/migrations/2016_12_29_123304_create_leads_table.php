@@ -15,7 +15,7 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads',function(Blueprint $table){
             $table->increments('id');
-            $table->string('userid',50);
+            $table->string('user_code',50);
             $table->string('aff_sub_rand',50);
             $table->string('rand_id',20);
             $table->string('off_name');
@@ -23,7 +23,7 @@ class CreateLeadsTable extends Migration
             $table->ipAddress('ip');
             $table->timestamps();
             $table->foreign('aff_sub_rand')->references('aff_sub_rand')->on('users')->onDelete('cascade');
-            $table->foreign('userid')->references('user_code')->on('users_temp')->onDelete('cascade');
+            $table->foreign('user_code')->references('user_code')->on('users_temp')->onDelete('cascade');
             $table->foreign('rand_id')->references('rand_id')->on('offers');
         });
     }

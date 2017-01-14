@@ -17,7 +17,7 @@ class CreateNetworkTable extends Migration
             $table->increments('id');
             $table->string('networkname');
             $table->string('api');
-            $table->string('networkid',50);
+            $table->string('networkid',50)->unique();
             $table->string('rate');
             $table->string('aff_sub');
             $table->string('platform');

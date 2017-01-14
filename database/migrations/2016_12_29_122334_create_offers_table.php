@@ -15,7 +15,7 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers',function(Blueprint $table){
             $table->increments('id');
-            $table->string('off_id');
+            $table->string('off_id')->unique();
             $table->string('off_name');
             $table->string('point');
             $table->string('networkid',50);
