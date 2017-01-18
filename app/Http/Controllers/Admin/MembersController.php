@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Users;
 class MembersController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class MembersController extends Controller
      */
     public function index()
     {
-        return 1;
+        $users=Users::all();
+        return view('admin.member.index',['active'=>'member','users'=>$users]);
     }
 
     /**
@@ -24,7 +25,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.member.create',['active'=>'member']);
     }
 
     /**
@@ -35,7 +36,26 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'fullname'=>'required',
+            'username'=>'required|unique:users,username',
+            'email'=>'required|email|unique:users,email',
+            'password'=>'required',
+            ]);
+        $user=new Users;
+        $user->fullname=$request->fullname;
+        $user->username=$request->username;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->aff_sub_rand=str_random(10);
+        $user->groupname='TIGER';
+        $user->ip=$_SERVER['REMOTE_ADDR'];
+        $user->country="Vietnam";
+        $user->user_agent="Admin create user";
+        $user->active=1;
+        $user->status=1;
+        $user->save();
+        return redirect()->route('admin.members.index')->with(['active'=>'member','status'=>'Bạn đã thêm thành công user '.$request->username,'class'=>'success']);
     }
 
     /**
@@ -57,7 +77,8 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=Users::findOrFail($id);
+        return view('admin.member.edit',['active'=>'member','user'=>$user]);
     }
 
     /**
@@ -69,7 +90,19 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'fullname'=>'required',
+            'username'=>'required',
+            'email'=>'required|email'
+            ]);
+        $user= Users::findOrFail($id);
+        $user->fullname=$request->fullname;
+        $user->username=$request->username;
+        $user->email=$request->email;
+        if($request->password!=null)
+        $user->password=bcrypt($request->password); 
+        $user->save();
+        return redirect()->route('admin.members.index')->with(['active'=>'member','status'=>'Bạn đã sửa thành công user '.$request->username,'class'=>'success']);
     }
 
     /**
@@ -78,8 +111,9 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        Users::destroy($id);
+        return redirect()->route('admin.members.index')->with(['active'=>'member','status'=>'Bạn đã xóa thành công user '.$request->username,'class'=>'danger']);
     }
 }

@@ -16,15 +16,15 @@ class Users extends Authenticatable
     ];
 
     public function clicks() {
-        return $this->hasMany(App\Clicks::class,'user_id');
+        return $this->hasMany(\App\Clicks::class,'user_id');
     }
     public function leads(){
-        return $this->hasMany(App\Leads::class,'user_id');
+        return $this->hasMany(\App\Leads::class,'user_id');
     }
     public function bookmarks(){
-        return $this->hasMany(App\Bookmarks::class,'user_id');
+        return $this->hasMany(\App\Bookmarks::class,'user_id');
     }
     public function usersTemp(){
-        return $this->hasMany(App\UsersTemp::class,'user_id');
+        return $this->hasMany(\App\UsersTemp::class,'user_id');
     }
 }

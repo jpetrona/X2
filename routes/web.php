@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('user/login');
 });
 
 Route::group(['prefix'=>'admin'],function(){
@@ -53,10 +53,17 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::delete('offerwall/{id}','Admin\OfferwallController@destroy')->name('admin.offerwall.destroy');
 	// @Member
 	Route::get('members','Admin\MembersController@index')->name('admin.members.index');
+	Route::get('members/create','Admin\MembersController@create')->name('admin.members.create');
+	Route::get('members/{id}/edit','Admin\MembersController@edit')->name('admin.members.edit');
+	Route::post('members','Admin\MembersController@store')->name('admin.members.store');
+	Route::put('members/{id}','Admin\MembersController@update')->name('admin.members.update');
+	Route::delete('members/{id}','Admin\MembersController@destroy')->name('admin.members.destroy');
+	
 });
 Route::group(['prefix'=>'user'],function(){
 	Route::get('login','User\AuthController@getLogin')->name('user.login');
 	Route::post('login','User\AuthController@postLogin');
 	Route::get('register','User\AuthController@getRegister')->name('user.register');
 	Route::post('register','User\AuthController@postRegister');
+	Route::get('account','User\AccountController@index')->name('user.account');
 });

@@ -38,7 +38,7 @@ class NetworkController extends Controller
     {
         $this->validate($request,[
             'networkname'=>'required',
-            'networkid'=>'required',
+            'networkid'=>'required|unique:network,networkid',
             'api'=>'required',
             'aff_sub'=>'required',
             'postback'=>'required',

@@ -209,7 +209,7 @@
     </li>     
 	  <li class="{!!($active=='network')?'active':''!!}"> <a href="{!!route('admin.network.index')!!}"> <i class="fa fa-globe"></i> <span class="title">Network</span></a></li>     
 	  <li class="{!!($active=='menu')?'active':''!!}"> <a href="{!!route('admin.menu.index')!!}"> <i class="fa fa-bars"></i> <span class="title">Menu</span></a></li>     
-	  <li class=""> <a href="{!!route('admin.members.index')!!}"> <i class="fa fa-user"></i> <span class="title">Members</span></a></li>     
+	  <li class="{!!($active=='member')?'active':''!!}"> <a href="{!!route('admin.members.index')!!}"> <i class="fa fa-user"></i> <span class="title">Members</span></a></li>     
 	  <li class=""> <a href="admin/invoices"> <i class="fa fa-money"></i> <span class="title">Invoices</span></a></li>     
 	  <li class=""> <a href="admin/check"> <i class="fa fa-search"></i> <span class="title">Check</span></a></li>     
       <li class=""> <a href="javascript:;"> <i class="fa fa-area-chart"></i> <span class="title">Reports</span> <span class="arrow "></span> </a>

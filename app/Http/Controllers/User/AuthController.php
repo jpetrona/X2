@@ -18,7 +18,7 @@ class AuthController extends Controller
             'txtpassword'=>'required'
             ]);
         if(Auth::guard('user')->attempt(['username'=>$request->txtusername,'password'=>$request->txtpassword])){
-            return redirect('1');
+            return redirect()->route('user.account');
         }else{
             return redirect()->route('user.login')->with(['flash'=>'Username Or Password incorrect']);
         }
