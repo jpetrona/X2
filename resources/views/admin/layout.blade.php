@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
-<title>Webarch - Responsive Admin Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>System Maketing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="" name="description" />
 <meta content="" name="author" />
     
@@ -17,7 +17,10 @@
 <link href="{!!url('public/assets/plugins/font-awesome/css/font-awesome.css')!!}" rel="stylesheet" type="text/css"/>
 <link href="{!!url('public/assets/css/animate.min.css')!!}" rel="stylesheet" type="text/css"/>
 <link href="{!!url('public/assets/plugins/jquery-scrollbar/jquery.scrollbar.css')!!}" rel="stylesheet" type="text/css"/>
+@yield('css')
+
 <!-- END CORE CSS FRAMEWORK -->
+
 <!-- BEGIN CSS TEMPLATE -->
 <link href="{!!url('public/assets/css/style.css')!!}" rel="stylesheet" type="text/css"/>
 <link href="{!!url('public/assets/css/responsive.css')!!}" rel="stylesheet" type="text/css"/>
@@ -38,7 +41,7 @@
 		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
 		</ul>
       <!-- BEGIN LOGO -->	
-      <a href="index.html"><img src="assets/img/logo.png" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21"/></a>
+      <a href="index.html"><img src="{!!url('public/assets/img/logo.png')!!}" class="logo" alt=""  data-src="{!!url('public/assets/img/logo.png')!!}" data-src-retina="assets/img/logo2x.png" width="106" height="21"/></a>
       <!-- END LOGO --> 
       <ul class="nav pull-right notifcation-center">	
         <li class="dropdown" id="header_task_bar"> <a href="index.html" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
@@ -55,19 +58,7 @@
             <div class="iconset top-menu-toggle-dark"></div>
             </a> </li>
         </ul>
-        <ul class="nav quick-section">
-          <li class="quicklinks"> <a href="#" class="" >
-            <div class="iconset top-reload"></div>
-            </a> </li>
-          <li class="quicklinks"> <span class="h-seperate"></span></li>
-          <li class="quicklinks"> <a href="#" class="" >
-            <div class="iconset top-tiles"></div>
-            </a> </li>
-			<li class="m-r-10 input-prepend inside search-form no-boarder">
-				<span class="add-on"> <span class="iconset top-search"></span></span>
-				 <input name="" type="text"  class="no-boarder " placeholder="Search Dashboard" style="width:250px;">
-			</li>
-		  </ul>
+
 	  </div>
 	 <!-- END TOP NAVIGATION MENU -->
 	 <!-- BEGIN CHAT TOGGLER -->
@@ -86,7 +77,7 @@
 					<div style="width:300px">
 						  <div class="notification-messages info">
 									<div class="user-profile">
-										<img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+										<img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="{!!url('assets/img/profiles/d2x.jpg')!!}" width="35" height="35">
 									</div>
 									<div class="message-wrapper">
 										<div class="heading">
@@ -120,7 +111,7 @@
 							</div>	
 							<div class="notification-messages success">
 								<div class="user-profile">
-									<img src="assets/img/profiles/h.jpg"  alt="" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35">
+									<img src="{!!url('public/assets/img/profiles/h.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/h.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/h2x.jpg')!!}" width="35" height="35">
 								</div>
 								<div class="message-wrapper">
 									<div class="heading">
@@ -138,7 +129,7 @@
 						</div>				
 				</div>
 				<div class="profile-pic"> 
-					<img src="assets/img/profiles/avatar_small.jpg"  alt="" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" /> 
+					<img src="{!!url('public/assets/img/profiles/avatar_small.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/avatar_small.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/avatar_small2x.jpg')!!}" width="35" height="35" /> 
 				</div>       			
 			</div>
 		 <ul class="nav quick-section ">
@@ -159,7 +150,7 @@
 			</li> 
 			<li class="quicklinks"> <span class="h-seperate"></span></li> 
 			<li class="quicklinks"> 	
-			<a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle" ><div class="iconset top-chat-dark "><span class="badge badge-important hide" id="chat-message-count">1</span></div>
+			<a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle" ><i class="fa fa-wifi"></i>
 			</a> 
 				<div class="simple-chat-popup chat-menu-toggle hide" >
 					<div class="simple-chat-popup-arrow"></div><div class="simple-chat-popup-inner">
@@ -188,41 +179,40 @@
    <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper"> 
    <div class="user-info-wrapper">	
 	<div class="profile-wrapper">
-		<img src="assets/img/profiles/avatar.jpg"  alt="" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" />
+		<img src="{!!url('public/assets/img/profiles/avatar.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/avatar.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/avatar2x.jpg')!!}" width="69" height="69" />
 	</div>
     <div class="user-info">
-      <div class="greeting">Welcome</div>
-      <div class="username">John <span class="semi-bold">Smith</span></div>
-      <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
+    <br/>
+	<br/>
+      <div class="status">Welcome<a href="#"><div class="status-icon green"></div>Admin</a></div>
+      <br>
     </div>
    </div>
   <!-- END MINI-PROFILE -->
    
    <!-- BEGIN SIDEBAR MENU -->	
-	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+	
     <ul>	
-      <li class="start active "> <a href="index.html"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
-	  <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>      
-	  <li class=""> <a href="../frontend/index.html"> <i class="fa fa-flag"></i>  <span class="title">Frontend</span></a></li>   
-	  <li class=""> <a href="javascript:;"> <i class="fa fa fa-adjust"></i> <span class="title">Themes</span> <span class="arrow "></span> </a>
+      <li class="start {!!($active=='home')?'active':''!!}"><a href="{!!route('admin.home')!!}"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span></a> </li>
+	   <li class="{!!($active=='offer')?'active':''!!}"> <a href="javascript:;"> <i class="fa fa fa-adjust"></i> <span class="title">Offers</span> <span class="arrow "></span> </a>
         <ul class="sub-menu">
-          <li > <a href="theme_coporate.html">Coporate </a> </li>
-          <li > <a href="theme_simple.html">Simple</a> </li>
-          <li > <a href="theme_elegant.html">Elegant</a> </li>
+          <?php $menuBanners=DB::table('menu_banner')->get(); ?>
+          @foreach ($menuBanners as $menu)
+            <li class="{!!(isset($subOffer) && $subOffer==$menu->id)?"active":""!!}"> <a href="http://x2.dev/admin/offer/{!!strtolower($menu->id)!!}" ><i class="{!!$menu->icon!!}"></i> {!!ucfirst($menu->name)!!} </a> </li>
+          @endforeach
         </ul>
 	  </li>    
-	  <li class=""> <a href="javascript:;"> <i class="fa fa-file-text"></i> <span class="title">Layouts</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="layout_options.html"> Layout Options </a> </li>
-          <li > <a href="boxed_layout.html">Boxed Layout </a> </li>
-          <li > <a href="boxed_layout_v2.html">Inner Boxed Layout </a> </li>
-          <li > <a href="extended_layout.html">Extended Layout</a> </li>
-          <li > <a href="RTL.html">RTL Layout</a> </li>
-          <li > <a href="horizontal_menu.html">Horizontal Menu</a> </li>
-          <li > <a href="horizontal_menu_boxed.html">Horizontal Menu & Boxed</a> </li>
-        </ul>
-	  </li>     
-      <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">UI Elements</span> <span class="arrow "></span> </a>
+	  <li class="{!!($active=='offerwall')?'active':''!!}"> 
+    <a href="{!!route('admin.offerwall.index')!!}">
+      <i class="fa fa-file-text"></i> <span class="title">OfferWall</span>
+    </a>
+    </li>     
+	  <li class="{!!($active=='network')?'active':''!!}"> <a href="{!!route('admin.network.index')!!}"> <i class="fa fa-globe"></i> <span class="title">Network</span></a></li>     
+	  <li class="{!!($active=='menu')?'active':''!!}"> <a href="{!!route('admin.menu.index')!!}"> <i class="fa fa-bars"></i> <span class="title">Menu</span></a></li>     
+	  <li class=""> <a href="{!!route('admin.members.index')!!}"> <i class="fa fa-user"></i> <span class="title">Members</span></a></li>     
+	  <li class=""> <a href="admin/invoices"> <i class="fa fa-money"></i> <span class="title">Invoices</span></a></li>     
+	  <li class=""> <a href="admin/check"> <i class="fa fa-search"></i> <span class="title">Check</span></a></li>     
+      <li class=""> <a href="javascript:;"> <i class="fa fa-area-chart"></i> <span class="title">Reports</span> <span class="arrow "></span> </a>
         <ul class="sub-menu">
 		  <li > <a href="typography.html"> Typography </a> </li>
 		  <li > <a href="messages_notifications.html"> Messages & Notifications </a> </li>
@@ -233,108 +223,11 @@
           <li > <a href="group_list.html">Group list </a> </li>
         </ul>
       </li>
-	  <li class=""> <a href="javascript:;"> <i class="icon-custom-form"></i> <span class="title">Forms</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="form_elements.html">Form Elements </a> </li>
-          <li > <a href="form_validations.html">Form Validations</a> </li>
-        </ul>
-      </li>
-      <li class=""> <a href="javascript:;"> <i class="icon-custom-portlets"></i> <span class="title">Grids</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="grids_simple.html">Simple Grids</a> </li>
-          <li > <a href="grids_draggable.html">Draggable Grids </a> </li>
-        </ul>
-      </li>
-      <li class=""> <a href="javascript:;"> <i class="icon-custom-thumb"></i> <span class="title">Tables</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="tables.html"> Basic Tables </a> </li>
-          <li > <a href="datatables.html"> Data Tables </a> </li>
-        </ul>
-      </li>
-      <li class=""> <a href="javascript:;"> <i class="icon-custom-map"></i> <span class="title">Maps</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="google_map.html"> Google Maps </a> </li>
-          <li > <a href="vector_map.html"> Vector Maps </a> </li>
-        </ul>
-      </li>
-      <li class=""> <a href="charts.html"> <i class="icon-custom-chart"></i> <span class="title">Charts</span> </a> </li>    
-      <li class=""> <a href="javascript:;"> <i class="icon-custom-extra"></i> <span class="title">Extra</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="user-profile.html"> User Profile </a> </li>
-          <li > <a href="time_line.html"> Time line </a> </li>
-          <li > <a href="support_ticket.html"> Support Ticket </a> </li>
-          <li > <a href="gallery.html"> Gallery</a> </li>
-		  <li class=""><a href="calender.html"> Calendar</a> </li>
-          <li > <a href="search_results.html"> Search Results </a> </li>
-          <li > <a href="invoice.html"> Invoice </a> </li>
-          <li > <a href="404.html"> 404 Page </a> </li>
-          <li > <a href="500.html"> 500 Page </a> </li>
-          <li > <a href="blank_template.html"> Blank Page </a> </li>
-          <li > <a href="login.html"> Login </a> </li>
-          <li > <a href="login_v2.html">Login v2</a> </li>
-          <li > <a href="lockscreen.html"> Lockscreen </a> </li>
-        </ul>
-      </li>
-	  <li class=""> <a href="javascript:;"> <i class="fa fa-folder-open"></i> <span class="title">Menu Levels</span> <span class="arrow "></span> </a>
-        <ul class="sub-menu">
-          <li > <a href="javascript:;"> Level 1 </a> </li>
-          <li > <a href="javascript:;">  <span class="title">Level 2</span> <span class="arrow "></span> </a>
-			<ul class="sub-menu">
-				 <li > <a href="javascript:;"> Sub Menu </a> </li>
-				 <li > <a href="ujavascript:;"> Sub Menu </a> </li>
-			</ul>
-		  </li>
-        </ul>
-      </li>
-	  <li class="hidden-lg hidden-md hidden-xs" id="more-widgets" > <a href="javascript:;"> <i class="fa fa-plus"></i></a> 
-		  <ul class="sub-menu">
-		  	<li class="side-bar-widgets">
-			<p class="menu-title">FOLDER <span class="pull-right"><a href="#" class="create-folder"><i class="icon-plus"></i></a></span></p>
-			<ul class="folders" >
-				  <li><a href="#"><div class="status-icon green"></div> My quick tasks </a> </li>
-				  <li><a href="#"><div class="status-icon red"></div> To do list </a> </li>
-				  <li><a href="#"><div class="status-icon blue"></div> Projects </a> </li>
-				  <li class="folder-input" style="display:none"><input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" id="folder-name"></li>
-			</ul>
-			<p class="menu-title">PROJECTS </p>
-				<div class="status-widget">
-					<div class="status-widget-wrapper">
-						<div class="title">Freelancer<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-						<p>Redesign home page</p>
-					</div>
-				</div>
-				<div class="status-widget">
-					<div class="status-widget-wrapper">
-						<div class="title">envato<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-						<p>Statistical report</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-	  </li>    
+	  <li class=""> <a href="admin/setting"> <i class="fa fa-cogs"></i> <span class="title">Setting</span></a></li>
+	  <li class=""> <a href="admin/backup"> <i class="fa fa-database"></i> <span class="title">Backup</span></a></li>
+      
     </ul>
-	<div class="side-bar-widgets">
-	<p class="menu-title">FOLDER <span class="pull-right"><a href="#" class="create-folder"> <i class="fa fa-plus"></i></a></span></p>
-	<ul class="folders" >
-		  <li><a href="#"><div class="status-icon green"></div> My quick tasks </a> </li>
-		  <li><a href="#"><div class="status-icon red"></div> To do list </a> </li>
-		  <li><a href="#"><div class="status-icon blue"></div> Projects </a> </li>
-		  <li class="folder-input" style="display:none"><input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" ></li>
-	</ul>
-	<p class="menu-title">PROJECTS </p>
-		<div class="status-widget">
-			<div class="status-widget-wrapper">
-				<div class="title">Freelancer<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-				<p>Redesign home page</p>
-			</div>
-		</div>
-		<div class="status-widget">
-			<div class="status-widget-wrapper">
-				<div class="title">envato<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-				<p>Statistical report</p>
-			</div>
-		</div>
-	</div>	
+	<p class="menu-title"></p>
 	<div class="clearfix"></div>
     <!-- END SIDEBAR MENU --> 
   </div>
@@ -393,9 +286,9 @@
                <div class="side-widget-title">favourites</div>
                <div id="favourites-list">
                 <div class="side-widget-content" >
-                    <div class="user-details-wrapper active" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
+                    <div class="user-details-wrapper active" data-chat-status="online" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -413,9 +306,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>	
-                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
+                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/c.jpg"  alt="" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/c.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/c.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/c2x.jpg')!!}" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -439,9 +332,9 @@
             <div class="side-widget">
                <div class="side-widget-title">more friends</div>
                  <div class="side-widget-content" id="friends-list">
-                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
+                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -459,9 +352,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>	
-                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
+                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/h.jpg"  alt="" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/h.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/h.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/h2x.jpg')!!}" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -479,9 +372,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>		
-                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
+                    <div class="user-details-wrapper" data-chat-status="online" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="Jane Smith">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/c.jpg"  alt="" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/c.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/c.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/c2x.jpg')!!}" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -499,9 +392,9 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>	
-                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="assets/img/profiles/d.jpg" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
+                    <div class="user-details-wrapper" data-chat-status="busy" data-chat-user-pic="{!!url('public/assets/img/profiles/d.jpg')!!}" data-chat-user-pic-retina="assets/img/profiles/d2x.jpg" data-user-name="David Nester">
                         <div class="user-profile">
-                            <img src="assets/img/profiles/h.jpg"  alt="" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35">
+                            <img src="{!!url('public/assets/img/profiles/h.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/h.jpg')!!}" data-src-retina="{!!url('public/assets/img/profiles/h2x.jpg')!!}" width="35" height="35">
                         </div>
                         <div class="user-details">
                             <div class="user-name">
@@ -542,7 +435,7 @@
             <div class="sent_time">Yesterday 11:25pm</div>
             <div class="user-details-wrapper " >
                 <div class="user-profile">
-                    <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                    <img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
                 </div>
                 <div class="user-details">
                   <div class="bubble">	
@@ -554,7 +447,7 @@
             </div>		
             <div class="user-details-wrapper ">
                 <div class="user-profile">
-                    <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                    <img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
                 </div>
                 <div class="user-details">
                   <div class="bubble">	
@@ -566,7 +459,7 @@
             </div>
             <div class="user-details-wrapper ">
                 <div class="user-profile">
-                    <img src="assets/img/profiles/d.jpg"  alt="" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+                    <img src="{!!url('public/assets/img/profiles/d.jpg')!!}"  alt="" data-src="{!!url('public/assets/img/profiles/d.jpg')!!}" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
                 </div>
                 <div class="user-details">
                   <div class="bubble">	
@@ -616,5 +509,6 @@
 <script src="{!!url('public/assets/js/core.js')!!}" type="text/javascript"></script> 
 <script src="{!!url('public/assets/js/chat.js')!!}" type="text/javascript"></script> 
 <!-- END CORE TEMPLATE JS --> 
+@yield('script')
 </body>
 </html>

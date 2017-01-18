@@ -9,6 +9,6 @@ class Network extends Model
     protected $table="network";
 
     public function offers(){
-    	return $this->hasMany(App\Offers::class,'network_id');
+    	return $this->hasMany(\App\Offers::class,'network_id');
     }
 }

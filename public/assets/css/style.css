@@ -2911,7 +2911,7 @@ div.DTTT_print_info p {
   position: absolute;
 }
 .login-container {
-  margin-top: 13%;
+  margin-top: 10%;
 }
 .lockscreen-wrapper {
   position: relative;
@@ -3885,7 +3885,7 @@ form legend,
   background-color: transparent;
 }
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .form-group .form-label {
   color: #55606e;
@@ -3897,7 +3897,7 @@ form legend,
   font-size: 12px;
 }
 .form-group .controls {
-  margin-top: 8px;
+  margin-top: 5px;
 }
 .form-control {
   border: 1px solid #E5E9EC;
@@ -8117,3 +8117,4 @@ body.rtl .footer-widget {
   right: 0;
   left: auto;
 }
+.tokenize-sample { width: 100%; }

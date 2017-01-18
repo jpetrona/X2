@@ -1,6 +1,4 @@
 $(function(){
-  Messenger().post("Thanks for checking out Messenger!");
-
   var loc = ['bottom', 'right'];
   var style = 'flat';
 
@@ -22,13 +20,13 @@ $(function(){
 
   update();
 
-  $lsel.locationSelector()
-    .on('update', function(pos){
-      loc = pos;
+  // $lsel.locationSelector()
+  //   .on('update', function(pos){
+  //     loc = pos;
 
-      update();
-    })
-  ;
+  //     update();
+  //   })
+  // ;
 
   $tsel.themeSelector({
     themes: ['flat', 'future', 'block', 'air', 'ice']

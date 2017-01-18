@@ -15,11 +15,12 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers',function(Blueprint $table){
             $table->increments('id');
-            $table->string('off_id')->unique();
+            $table->string('off_id')->index();
             $table->string('off_name');
             $table->integer('point');
             $table->integer('network_id')->unsigned();
-            $table->string('payout');
+            $table->string('payout',10);
+            $table->integer('rate');
             $table->integer('dailycap');
             $table->string('country');
             $table->string('img_link');
@@ -27,10 +28,10 @@ class CreateOffersTable extends Migration
             $table->text('des');
             $table->integer('menu_id')->unsigned();
             $table->string('rand_id',20)->unique();
-            $table->boolean('incent');
-            $table->integer('click');
-            $table->integer('lead');
-            $table->boolean('status');
+            $table->boolean('incent')->default(1);
+            $table->integer('click')->default(0);
+            $table->integer('lead')->default(0);
+            $table->boolean('status')->default(1);
             $table->timestamps();
             $table->foreign('network_id')->references('id')->on('network')->onDelete('cascade');
             $table->foreign('menu_id')->references('id')->on('menu_banner')->onDelete('cascade');

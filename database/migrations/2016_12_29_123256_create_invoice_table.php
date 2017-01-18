@@ -21,7 +21,7 @@ class CreateInvoiceTable extends Migration
             $table->string('bank');
             $table->string('name');
             $table->string('stk',50);
-            $table->boolean('paid');
+            $table->boolean('paid')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

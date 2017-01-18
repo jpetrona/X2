@@ -64,6 +64,8 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         'M' => 
         array (
             'Monolog\\' => 8,
+            'MaxMind\\Db\\' => 11,
+            'MaxMind\\' => 8,
         ),
         'L' => 
         array (
@@ -72,6 +74,10 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         'I' => 
         array (
             'Illuminate\\' => 11,
+        ),
+        'G' => 
+        array (
+            'GeoIp2\\' => 7,
         ),
         'F' => 
         array (
@@ -85,6 +91,7 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         ),
         'C' => 
         array (
+            'Composer\\CaBundle\\' => 18,
             'ClassPreloader\\' => 15,
             'Carbon\\' => 7,
         ),
@@ -197,6 +204,14 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'MaxMind\\Db\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maxmind-db/reader/src/MaxMind/Db',
+        ),
+        'MaxMind\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maxmind/web-service-common/src',
+        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
@@ -204,6 +219,10 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
+        ),
+        'GeoIp2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geoip2/geoip2/src',
         ),
         'Faker\\' => 
         array (
@@ -220,6 +239,10 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
         ),
         'ClassPreloader\\' => 
         array (
@@ -286,14 +309,13 @@ class ComposerStaticInitab7c0ba8f78fcba32de28b40e67f1783
         'CreateCountryTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123204_create_country_table.php',
         'CreateInvoiceTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123256_create_invoice_table.php',
         'CreateLeadsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123304_create_leads_table.php',
-        'CreateMenuBannerTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123315_create_menu_banner_table.php',
-        'CreateNetworkTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123326_create_network_table.php',
-        'CreateOffersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123334_create_offers_table.php',
+        'CreateMenuBannerTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_122315_create_menu_banner_table.php',
+        'CreateNetworkTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_122326_create_network_table.php',
+        'CreateOffersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_122334_create_offers_table.php',
         'CreateOfferwallTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123343_create_offerwall_table.php',
-        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateShoutboxTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123355_create_shoutbox_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
-        'CreateUsersTempTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123421_create_users_temp_table.php',
+        'CreateUsersTempTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_123300_create_users_temp_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

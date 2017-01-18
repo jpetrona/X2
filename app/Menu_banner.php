@@ -11,6 +11,6 @@ class Menu_banner extends Model
     public $timestamps = false;
 
     public function offers(){
-    	return $this->hasMany(App\Offers::class,'menu_id');
+    	return $this->hasMany(\App\Offers::class,'menu_id');
     }
 }

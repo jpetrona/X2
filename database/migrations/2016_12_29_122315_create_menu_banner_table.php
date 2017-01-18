@@ -17,7 +17,7 @@ class CreateMenuBannerTable extends Migration
             $table->increments('id');
             $table->string('icon');
             $table->string('name')->unique();
-            $table->boolean('status');
+            $table->boolean('status')->default(1);
         });
     }
 

@@ -19,8 +19,8 @@ class CreateUsersTempTable extends Migration
             $table->string('user_code',50)->unique();
             $table->ipAddress('ip');
             $table->string('user_agent');
-            $table->float('point',10,2);
-            $table->integer('lead');
+            $table->float('point',10,2)->default(0);
+            $table->integer('lead')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

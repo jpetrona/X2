@@ -6,9 +6,18 @@ $(document).ready(function() {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                    txtusername: {
-                        minlength: 2,
+                    txtfullname: {
+                        minlength: 5,
                         required: true
+                    },
+                    txtusername: {
+                        minlength: 5,
+                        required: true
+                    },
+                    txtemail: {
+                        minlength: 5,
+                        required: true,
+                        email: true
                     },
                     txtpassword: {
                         required: true,

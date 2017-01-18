@@ -149,7 +149,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 		}
 	} );
 	
-$(".select2-wrapper").select2({minimumResultsForSearch: -1});	
+// $(".select2-wrapper").select2({minimumResultsForSearch: -1});	
 
 /* Table initialisation */
 $(document).ready(function() {
@@ -203,7 +203,7 @@ $(document).ready(function() {
   		    });
 	});
 	$('#example_wrapper .dataTables_filter input').addClass("input-medium "); // modify table search input
-    $('#example_wrapper .dataTables_length select').addClass("select2-wrapper span12"); // modify table per page dropdown
+    // $('#example_wrapper .dataTables_length select').addClass("select2-wrapper span12"); // modify table per page dropdown
 
 	
 	
@@ -274,10 +274,10 @@ $(document).ready(function() {
     });
 	
 	$('#example2_wrapper .dataTables_filter input').addClass("input-medium ");
-    $('#example2_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
+    // $('#example2_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
 	
 	$('#example3_wrapper .dataTables_filter input').addClass("input-medium ");
-    $('#example3_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
+    // $('#example3_wrapper .dataTables_length select').addClass("select2-wrapper span12"); 
 	
 	
     /* Add event listener for opening and closing details
@@ -302,7 +302,7 @@ $(document).ready(function() {
         }
     });
 	
-		$(".select2-wrapper").select2({minimumResultsForSearch: -1});
+		// $(".select2-wrapper").select2({minimumResultsForSearch: -1});
 
 	function fnClickAddRow() {
     $('#example3').dataTable().fnAddData( [

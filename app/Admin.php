@@ -8,7 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Admin extends Authenticatable
 {
     use Notifiable;
+    
     protected $table="admin";
+
     public $timestamps = false;
 
     protected $hidden = [

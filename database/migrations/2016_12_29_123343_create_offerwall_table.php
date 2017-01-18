@@ -17,11 +17,9 @@ class CreateOfferwallTable extends Migration
             $table->increments('id');
             $table->string('network',50);
             $table->string('iframe');
-            $table->string('networkid',50);
-            $table->string('pass',20);
             $table->string('secretKey',50);
-            $table->string('dailypoint',20);
-            $table->boolean('status');
+            $table->integer('dailypoint')->default(0);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
