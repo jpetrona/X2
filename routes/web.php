@@ -58,6 +58,7 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::post('members','Admin\MembersController@store')->name('admin.members.store');
 	Route::put('members/{id}','Admin\MembersController@update')->name('admin.members.update');
 	Route::delete('members/{id}','Admin\MembersController@destroy')->name('admin.members.destroy');
+	Route::get('members/{id}/login','Admin\MembersController@login')->name('admin.members.login');
 	
 });
 Route::group(['prefix'=>'user'],function(){
@@ -65,5 +66,6 @@ Route::group(['prefix'=>'user'],function(){
 	Route::post('login','User\AuthController@postLogin');
 	Route::get('register','User\AuthController@getRegister')->name('user.register');
 	Route::post('register','User\AuthController@postRegister');
-	Route::get('account','User\AccountController@index')->name('user.account');
+	Route::get('account','User\AccountController@account')->name('user.account');
 });
+Route::get('go/{aff_sub_rand}/{rand_id}','GoController@index')->name('go');

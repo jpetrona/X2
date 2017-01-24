@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Users;
+use Auth;
 class MembersController extends Controller
 {
     /**
@@ -115,5 +116,11 @@ class MembersController extends Controller
     {
         Users::destroy($id);
         return redirect()->route('admin.members.index')->with(['active'=>'member','status'=>'Bạn đã xóa thành công user '.$request->username,'class'=>'danger']);
+    }
+    public function login($id)
+    {
+        Auth::guard('user')->logout();
+        Auth::guard('user')->loginUsingId($id);
+        return redirect()->route('user.account');
     }
 }

@@ -54,8 +54,9 @@
 							</td>
 							<td class="v-align-middle"><input type="checkbox" name="status" class="js-switch" checked /></td>
 							<td>
-								<a href="{!!route('admin.members.edit',$user->id)!!}" class="btn btn-small btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-								<a href="#" onclick="event.preventDefault(); $('.delete_{!!$user->id!!}').submit()" class="btn btn-small btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								<a href="{!!route('admin.members.login',$user->id)!!}" class="btn btn-small btn-success" title="Login" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+								<a href="{!!route('admin.members.edit',$user->id)!!}" class="btn btn-small btn-info" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+								<a href="#" onclick="event.preventDefault(); $('.delete_{!!$user->id!!}').submit()" class="btn btn-small btn-danger" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
 								<form action="{!!route('admin.members.destroy',$user->id)!!}" method="POST" class="delete_{!!$user->id!!}" style="display: none">
 									{!!csrf_field()!!}
 									{!!method_field('DELETE')!!}
