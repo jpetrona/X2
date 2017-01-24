@@ -71,9 +71,7 @@
             </div>
           </div>
 		  </form>
-        </div>
-     
-    
+        </div>  
   </div>
 </div>
 <!-- END CONTAINER -->
